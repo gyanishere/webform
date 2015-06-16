@@ -1,0 +1,166 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Delta Dental</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'member_form/stylesheets/toast.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'member_form/stylesheets/style.css' %}">
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
+	</head>
+	<body>
+		<div class="wrapper">
+				<div class="container">
+					<div class="container__header">
+						<img src='{% static 'member_form/media/delta_dental_logo.jpg' %}' class='container__header__logo'>
+					</div>
+
+					<form class='container__form'>
+						<div class="grid">
+						    <div class="grid__col grid__col--1-of-2" id='form--first--first'>
+						      <label class='container__form__label container__form__label--fn'>First Name</label>
+						      <input autofocus type='text' class='container__form__input container__form__input--fn' name='first_name'>
+						    </div>
+						    <div class="grid__col grid__col--1-of-2" id='form--first--second'>
+						      <label class='container__form__label container__form__label--ln'>Last Name</label>
+						      <input type='text' class='container__form__input container__form__input--ln' name='first_name'>
+						    </div>
+					  	</div>
+
+						<div class="grid">
+							<div class='form--second--first'>
+							    <div class="grid__col grid__col--3-of-4">
+							      <label class='container__form__label container__form__label--fn'>City</label>
+							      <input type='text' class='container__form__input container__form__input--fn' name='first_name'>
+							    </div>
+							    <div class="grid__col grid__col--1-of-4">
+							      <label class='container__form__label container__form__label--ln'>State</label>
+							      <div class='select--holder'>
+							      <select class='container__form__input container__form__input--ln'>
+							        <option disabled selected></option>
+									<option value="AL">AL</option>
+									<option value="AK">AK</option>
+									<option value="AZ">AZ</option>
+									<option value="AR">AR</option>
+									<option value="CA">CA</option>
+									<option value="CO">CO</option>
+									<option value="CT">CT</option>
+									<option value="DE">DE</option>
+									<option value="DC">DC</option>
+									<option value="FL">FL</option>
+									<option value="GA">GA</option>
+									<option value="HI">HI</option>
+									<option value="ID">ID</option>
+									<option value="IL">IL</option>
+									<option value="IN">IN</option>
+									<option value="IA">IA</option>
+									<option value="KS">KS</option>
+									<option value="KY">KY</option>
+									<option value="LA">LA</option>
+									<option value="ME">ME</option>
+									<option value="MD">MD</option>
+									<option value="MA">MA</option>
+									<option value="MI">MI</option>
+									<option value="MN">MN</option>
+									<option value="MS">MS</option>
+									<option value="MO">MO</option>
+									<option value="MT">MT</option>
+									<option value="NE">NE</option>
+									<option value="NV">NV</option>
+									<option value="NH">NH</option>
+									<option value="NJ">NJ</option>
+									<option value="NM">NM</option>
+									<option value="NY">NY</option>
+									<option value="NC">NC</option>
+									<option value="ND">ND</option>
+									<option value="OH">OH</option>
+									<option value="OK">OK</option>
+									<option value="OR">OR</option>
+									<option value="PA">PA</option>
+									<option value="RI">RI</option>
+									<option value="SC">SC</option>
+									<option value="SD">SD</option>
+									<option value="TN">TN</option>
+									<option value="TX">TX</option>
+									<option value="UT">UT</option>
+									<option value="VT">VT</option>
+									<option value="VA">VA</option>
+									<option value="WA">WA</option>
+									<option value="WV">WV</option>
+									<option value="WI">WI</option>
+									<option value="WY">WY</option>
+							      </select>
+							    </div>
+							    </div>
+							 </div>
+							 <div class='form--second--second'>
+							    <div class="grid__col grid__col--4-of-6">
+							      <label class='container__form__label container__form__label--ln'>Zip</label>
+							      <input type='text' class='container__form__input container__form__input--ln' name='first_name'>
+							    </div>
+							    <div class="grid__col grid__col--2-of-6">
+							      <label class='container__form__label container__form__label--ln'>Time Zone</label>
+							      <input type='text' class='container__form__input container__form__input--ln' name='first_name'>
+							    </div>
+							</div>
+					  	</div>
+
+						<div class="grid">
+							<div class='form--second--first'>
+							    <div class="grid__col grid__col--4-of-4">
+							      <label class='container__form__label container__form__label--fn'>Mobile Number</label>
+							      <input type='text' class='container__form__input container__form__input--fn' name='first_name'>
+							    </div>
+							 </div>
+							 <div class='form--second--second'>
+							    <div class="grid__col grid__col--4-of-6">
+							      <label class='container__form__label container__form__label--ln'>Birthdate</label>
+							      <input type='text' class='container__form__input container__form__input--ln' name='first_name'>
+							    </div>
+							</div>
+					  	</div>
+						
+						<div class='grid--title'>
+							Age Ranges in Household
+						</div>
+
+						<div class="grid grid--nomargin">
+							<div class='form--second--first'>
+
+							    <div class="grid__col grid__col--2-of-4">
+							    	<div class='input--item'>
+							    		<input type="checkbox" name="0_3"><label for="0_3">Infant/Toddler (0 - 3)</label>
+							    	</div>
+							    	<div class='input--item'>
+							    		<input type="checkbox" name="4_12"><label for="4_12">Child (4 - 12)</label>
+							    	</div>
+							    	<div class='input--item'>
+							    		<input type="checkbox" name="13_19"><label for="13_19">Teen (13 - 19)</label>
+							    	</div>
+							    </div>
+							</div>
+							<div class='form--second--second'>
+							    <div class="grid__col grid__col--2-of-4">
+							    	<div class='input--item'>
+							    		<input type="checkbox" name="0_3"><label for="0_3">Infant/Toddler (0 - 3)</label>
+							    	</div>
+							    	<div class='input--item'>
+							    		<input type="checkbox" name="4_12"><label for="4_12">Child (4 - 12)</label>
+							    	</div>
+							    	<div class='input--item'>
+							    		<input type="checkbox" name="13_19"><label for="13_19">Teen (13 - 19)</label>
+							    	</div>
+							    </div>
+							</div>
+					  	</div>
+
+						<div class="grid">
+							<div class='form--second--first'>
+							    <div class="grid__col grid__col--4-of-4">
+							    	<input type='submit' class='submit--button'>
+							    </div>
+							</div>
+					  	</div>
+
+		</div>
+	</body>
+</html>
