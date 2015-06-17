@@ -17,25 +17,25 @@
 					<form class='container__form'>
 						<div class="grid">
 						    <div class="grid__col grid__col--1-of-2 width--mob" id='form--first--first'>
-						      <label class='container__form__label container__form__label--fn'>First Name</label>
-						      <input autofocus type='text' class='container__form__input container__form__input--fn' name='first_name'>
+						      <label class='container__form__label container__form__label--fn' for='first_name'>First Name</label>
+						      <input autofocus type='text' class='container__form__input container__form__input--fn' id='first_name' name='first_name'>
 						    </div>
 						    <div class="grid__col grid__col--1-of-2 width--mob" id='form--first--second'>
-						      <label class='container__form__label container__form__label--ln'>Last Name</label>
-						      <input type='text' class='container__form__input container__form__input--ln' name='first_name'>
+						      <label class='container__form__label container__form__label--ln' for='last_name'>Last Name</label>
+						      <input type='text' class='container__form__input container__form__input--ln' id='last_name' name='last_name'>
 						    </div>
 					  	</div>
 
 						<div class="grid">
 							<div class='form--second--first width--expand width--mob compress--mob'>
 							    <div class="grid__col grid__col--3-of-4 width--mob">
-							      <label class='container__form__label container__form__label--fn form--city'>City</label>
-							      <input type='text' class='container__form__input container__form__input--fn form--city' name='first_name'>
+							      <label for='city' class='container__form__label container__form__label--fn form--city'>City</label>
+							      <input type='text' class='container__form__input container__form__input--fn form--city' id='city' name='city'>
 							    </div>
 							    <div class="grid__col grid__col--1-of-4 width--mob compress--mob">
-							      <label class='container__form__label container__form__label--ln form--city form--city--left'>State</label>
+							      <label for='state' class='container__form__label container__form__label--ln form--city form--city--left'>State</label>
 							      <div class='select--holder'>
-							      <select class='container__form__input container__form__input--ln form--state'>
+							      <select class='container__form__input container__form__input--ln form--state' id='state' name='state'>
 							        <option disabled selected></option>
 									<option value="AL">AL</option>
 									<option value="AK">AK</option>
@@ -94,27 +94,27 @@
 							 </div>
 							 <div class='form--second--second width--expand width--mob compress--mob'>
 							    <div class="grid__col grid__col--4-of-6 width--mob">
-							      <label class='container__form__label container__form__label--ln smaller--orig'>Zip</label>
-							      <input type='text' class='container__form__input container__form__input--ln smaller--orig' name='first_name'>
+							      <label for='zip' class='container__form__label container__form__label--ln smaller--orig'>Zip</label>
+							      <input type='text' class='container__form__input container__form__input--ln smaller--orig' id='zip' name='zip'>
 							    </div>
 							    <div class="grid__col grid__col--2-of-6 width--mob">
-							      <label class='container__form__label container__form__label--ln smaller--orig'>Time Zone</label>
-							      <input type='text' class='container__form__input container__form__input--ln smaller--orig' name='first_name'>
+							      <label for='timezone' class='container__form__label container__form__label--ln smaller--orig'>Time Zone</label>
+							      <input type='text' class='container__form__input container__form__input--ln smaller--orig' id='timezone' name='timezone'>
 							    </div>
 							</div>
 					  	</div>
 
-						<div class="grid nested">
+						<div class="grid nested third">
 							<div class='form--second--first'>
 							    <div class="grid__col grid__col--4-of-4">
-							      <label class='container__form__label container__form__label--fn'>Mobile Number</label>
-							      <input type='text' class='container__form__input container__form__input--fn' name='first_name'>
+							      <label for='mobile_number' class='container__form__label container__form__label--fn'>Mobile Number</label>
+							      <input type='text' class='container__form__input container__form__input--fn' id='mobile_number' name='mobile_number'>
 							    </div>
 							 </div>
 							 <div class='form--second--second'>
 							    <div class="grid__col grid__col--4-of-6">
-							      <label class='container__form__label container__form__label--ln'>Birthdate</label>
-							      <input type='text' class='container__form__input container__form__input--ln' name='first_name'>
+							      <label for='birthdate' class='container__form__label container__form__label--ln'>Birthdate</label>
+							      <input type='text' class='container__form__input container__form__input--ln' name='birthdate' id='birthdate'>
 							    </div>
 							</div>
 					  	</div>
@@ -127,28 +127,38 @@
 							<div class='form--second--first'>
 
 							    <div class="grid__col grid__col--2-of-4">
-							    	<div class='input--item'>
-							    		<input type="checkbox" name="0_3"><label for="0_3">Infant/Toddler (0 - 3)</label>
-							    	</div>
-							    	<div class='input--item'>
-							    		<input type="checkbox" name="4_12"><label for="4_12">Child (4 - 12)</label>
-							    	</div>
-							    	<div class='input--item'>
-							    		<input type="checkbox" name="13_19"><label for="13_19">Teen (13 - 19)</label>
-							    	</div>
+
+									<div class='input--item'>
+										<input type="checkbox" name="checkboxG4" id="checkboxG4" class="css-checkbox" value='infant_toddler'>
+										<label for="checkboxG4" class="css-label radGroup1 clr">Infant/Toddler (0 -3)</label>
+									</div>
+
+									<div class='input--item'>
+										<input type="checkbox" name="checkboxG5" id="checkboxG5" class="css-checkbox" value='child'>
+										<label for="checkboxG5" class="css-label radGroup1 clr">Child (4 - 12)</label>
+									</div>
+
+									<div class='input--item'>
+										<input type="checkbox" name="checkboxG6" id="checkboxG6" class="css-checkbox" value='teen'>
+										<label for="checkboxG6" class="css-label radGroup1 clr">Teen (13 - 19)</label>
+									</div>
 							    </div>
 							</div>
 							<div class='form--second--second'>
 							    <div class="grid__col grid__col--2-of-4">
-							    	<div class='input--item'>
-							    		<input type="checkbox" name="0_3"><label for="0_3">Infant/Toddler (0 - 3)</label>
-							    	</div>
-							    	<div class='input--item'>
-							    		<input type="checkbox" name="4_12"><label for="4_12">Child (4 - 12)</label>
-							    	</div>
-							    	<div class='input--item'>
-							    		<input type="checkbox" name="13_19"><label for="13_19">Teen (13 - 19)</label>
-							    	</div>
+
+									<div class='input--item'>
+										<input type="checkbox" name="checkboxG1" id="checkboxG1" class="css-checkbox" value='young_adult'>
+										<label for="checkboxG1" class="css-label radGroup1 clr">Young Adult (20 - 35)</label>
+									</div>
+									<div class='input--item'>
+										<input type="checkbox" name="checkboxG2" id="checkboxG2" class="css-checkbox" value='adult'>
+										<label for="checkboxG2" class="css-label radGroup1 clr">Adult (35 - 65)</label>
+									</div>
+									<div class='input--item'>
+										<input type="checkbox" name="checkboxG3" id="checkboxG3" class="css-checkbox" value='older_adult'>
+										<label for="checkboxG3" class="css-label radGroup1 clr">Older Adult (65+)</label>
+									</div>
 							    </div>
 							</div>
 					  	</div>
@@ -162,5 +172,6 @@
 					  	</div>
 
 		</div>
+		<script src="{% static 'member_form/scripts/checkbox_patch.js' %}" type="text/javascript"></script>			
 	</body>
 </html>

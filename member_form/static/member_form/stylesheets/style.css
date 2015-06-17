@@ -35,6 +35,7 @@ body {
 	width:100%;
 	background-color:#42AF4E;
 	text-align:center;
+	pointer-events:none;
 }
 
 .container__header__logo {
@@ -81,6 +82,9 @@ body {
 .container__form__label {
 	display:block;
 	width:100%;
+	overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
 }
 
 .grid__col--1-of-2#form--first--first label, .grid__col--1-of-2#form--first--first input {
@@ -156,6 +160,10 @@ body {
 	width:20%;
 }
 
+.input--item {
+	margin-left:-5px;
+}
+
 .input--item label {
 	margin-left:5px;
 }
@@ -174,10 +182,49 @@ body {
 	cursor:pointer;
 }
 
+.grid.nested.third {
+	margin-top:15px;
+}
+
 .submit--button:focus {
 	outline:0;
 	background-color:#34853D;
 }
+
+
+/* CHECKBOXES -- custom */
+
+input[type=checkbox].css-checkbox {
+							position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+						}
+
+						input[type=checkbox].css-checkbox + label.css-label, input[type=checkbox].css-checkbox + label.css-label.clr {
+							padding-left:23px;
+							height:15px; 
+							display:inline-block;
+							line-height:15px;
+							background-repeat:no-repeat;
+							background-position: 0 0;
+							font-size:15px;
+							vertical-align:middle;
+							cursor:pointer;
+
+						}
+
+						input[type=checkbox].css-checkbox:checked + label.css-label, input[type=checkbox].css-checkbox + label.css-label.chk {
+							background-position: 0 -15px;
+						}
+						label.css-label {
+				background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_465c4118495592e0b09ab23295a14f6c.png);
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+
+/* responsive media queries */
 
     @media (max-width: 800px) {
 
@@ -219,7 +266,7 @@ body {
       }
 
       .grid {
-      	margin-top:0;
+      	margin-top:0 !important;
       	position:relative;
       	left:15px;
       }
@@ -258,6 +305,14 @@ body {
 
       .nested .form--second--first {
       		left:0;
+      		width:100%;
+      		display:block;
+      }
+
+      .nested.final .form--second--second {
+      	  width: 100%;
+  		  display: block;
+  		  left: 0;
       }
 
       .final {
@@ -272,6 +327,11 @@ body {
 
       .grid__col--4-of-6 {
       	width:60%;
+      }
+
+      .grid--title {
+      	margin-left:15px;
+      	margin-bottom:5px;
       }
 
 
