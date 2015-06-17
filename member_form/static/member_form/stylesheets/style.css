@@ -215,7 +215,7 @@ input[type=checkbox].css-checkbox {
 							background-position: 0 -15px;
 						}
 						label.css-label {
-				background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_465c4118495592e0b09ab23295a14f6c.png);
+				background-image:url('../media/checkbox.png');
 				-webkit-touch-callout: none;
 				-webkit-user-select: none;
 				-khtml-user-select: none;
