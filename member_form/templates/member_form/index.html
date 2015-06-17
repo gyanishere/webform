@@ -16,26 +16,26 @@
 
 					<form class='container__form'>
 						<div class="grid">
-						    <div class="grid__col grid__col--1-of-2" id='form--first--first'>
+						    <div class="grid__col grid__col--1-of-2 width--mob" id='form--first--first'>
 						      <label class='container__form__label container__form__label--fn'>First Name</label>
 						      <input autofocus type='text' class='container__form__input container__form__input--fn' name='first_name'>
 						    </div>
-						    <div class="grid__col grid__col--1-of-2" id='form--first--second'>
+						    <div class="grid__col grid__col--1-of-2 width--mob" id='form--first--second'>
 						      <label class='container__form__label container__form__label--ln'>Last Name</label>
 						      <input type='text' class='container__form__input container__form__input--ln' name='first_name'>
 						    </div>
 					  	</div>
 
 						<div class="grid">
-							<div class='form--second--first'>
-							    <div class="grid__col grid__col--3-of-4">
-							      <label class='container__form__label container__form__label--fn'>City</label>
-							      <input type='text' class='container__form__input container__form__input--fn' name='first_name'>
+							<div class='form--second--first width--expand width--mob compress--mob'>
+							    <div class="grid__col grid__col--3-of-4 width--mob">
+							      <label class='container__form__label container__form__label--fn form--city'>City</label>
+							      <input type='text' class='container__form__input container__form__input--fn form--city' name='first_name'>
 							    </div>
-							    <div class="grid__col grid__col--1-of-4">
-							      <label class='container__form__label container__form__label--ln'>State</label>
+							    <div class="grid__col grid__col--1-of-4 width--mob compress--mob">
+							      <label class='container__form__label container__form__label--ln form--city form--city--left'>State</label>
 							      <div class='select--holder'>
-							      <select class='container__form__input container__form__input--ln'>
+							      <select class='container__form__input container__form__input--ln form--state'>
 							        <option disabled selected></option>
 									<option value="AL">AL</option>
 									<option value="AK">AK</option>
@@ -92,19 +92,19 @@
 							    </div>
 							    </div>
 							 </div>
-							 <div class='form--second--second'>
-							    <div class="grid__col grid__col--4-of-6">
-							      <label class='container__form__label container__form__label--ln'>Zip</label>
-							      <input type='text' class='container__form__input container__form__input--ln' name='first_name'>
+							 <div class='form--second--second width--expand width--mob compress--mob'>
+							    <div class="grid__col grid__col--4-of-6 width--mob">
+							      <label class='container__form__label container__form__label--ln smaller--orig'>Zip</label>
+							      <input type='text' class='container__form__input container__form__input--ln smaller--orig' name='first_name'>
 							    </div>
-							    <div class="grid__col grid__col--2-of-6">
-							      <label class='container__form__label container__form__label--ln'>Time Zone</label>
-							      <input type='text' class='container__form__input container__form__input--ln' name='first_name'>
+							    <div class="grid__col grid__col--2-of-6 width--mob">
+							      <label class='container__form__label container__form__label--ln smaller--orig'>Time Zone</label>
+							      <input type='text' class='container__form__input container__form__input--ln smaller--orig' name='first_name'>
 							    </div>
 							</div>
 					  	</div>
 
-						<div class="grid">
+						<div class="grid nested">
 							<div class='form--second--first'>
 							    <div class="grid__col grid__col--4-of-4">
 							      <label class='container__form__label container__form__label--fn'>Mobile Number</label>
@@ -123,7 +123,7 @@
 							Age Ranges in Household
 						</div>
 
-						<div class="grid grid--nomargin">
+						<div class="grid grid--nomargin nested final">
 							<div class='form--second--first'>
 
 							    <div class="grid__col grid__col--2-of-4">
@@ -153,7 +153,7 @@
 							</div>
 					  	</div>
 
-						<div class="grid">
+						<div class="grid button">
 							<div class='form--second--first'>
 							    <div class="grid__col grid__col--4-of-4">
 							    	<input type='submit' class='submit--button'>
