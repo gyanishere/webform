@@ -191,6 +191,12 @@ body {
 	background-color:#34853D;
 }
 
+.required {
+  color: #C72E2E;
+  margin-left: 3%;
+  margin-top: 25px;
+}
+
 
 /* CHECKBOXES -- custom */
 
