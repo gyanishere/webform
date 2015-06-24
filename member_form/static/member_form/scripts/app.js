@@ -2,7 +2,8 @@
 // No validation yet
 // ---> (?) for notes on implementation
 
-$('.container__form').on('submit',function() {
+$('.container__form').on('submit', function(event) {
+	var formValues = {};
 	// grab data from all inputs
 	var firstName = $('#first_name').val();
 	var lastName = $('#last_name').val();
@@ -15,17 +16,8 @@ $('.container__form').on('submit',function() {
 	var mobileNumber = $('#mobile_number').val();
 	var birthdate = $('#birthdate').val();
 
-	// individual checkboxes
-	var infantToddler = $('label[for="checkboxG4"]').hasClass('chk')
-	var child = $('label[for="checkboxG5"]').hasClass('chk')
-	var teen = $('label[for="checkboxG6"]').hasClass('chk')
-	var youngAdult = $('label[for="checkboxG1"]').hasClass('chk')
-	var adult = $('label[for="checkboxG2"]').hasClass('chk')
-	var olderAdult = $('label[for="checkboxG3"]').hasClass('chk')
-	// (?) seems repetitive, but I couldn't think of a more scalable solution (maybe a For loop)
-
 	// create dictionary with data
-	formObject = {
+	formValues = {
 		firstName: firstName,
 		lastName: lastName,
 		city: city,
@@ -33,17 +25,18 @@ $('.container__form').on('submit',function() {
 		zip: zip,
 		timeZone: timezone,
 		mobileNumber: mobileNumber,
-		birthDate: birthdate,
-		infantToddler: infantToddler,
-		child: child,
-		teen: teen,
-		youngAdult: youngAdult,
-		adult: adult,
-		olderAdult: olderAdult,
+		birthDate: birthdate
+	}
+
+	var checkboxes = $('input[type="checkbox"]');
+	for (var i = 0; i < checkboxes.length; i++) {
+		var checkboxName = $(checkboxes[i]).attr('name');
+		formValues[checkboxName] = $(checkboxes[i]).prop('checked');
 	}
 
 	// call ajax function
-	post();
+	// post(formValues);
+	console.log(formValues)
 
 	return false;
 	// (?) return false works as event.stopPropagation() and event.preventDefault() within jQuery event handler
@@ -51,10 +44,10 @@ $('.container__form').on('submit',function() {
 });
 
 function post() {
-/*  $.post(formObject, function(data) {
+/*  $.post(formValues, function(data) {
 		console.log(data);
 	});
 */
-console.log(formObject)
+// console.log(formValues)
 // debug
 }
