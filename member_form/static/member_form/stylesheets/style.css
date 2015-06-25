@@ -229,6 +229,18 @@ input[type=checkbox].css-checkbox {
 				-ms-user-select: none;
 				user-select: none;
 			}
+			
+			.blank label {
+			color:red;
+			}
+			
+			.blank input, .blank input:focus, .blank select, .blank select:focus {
+			border-color:red;
+			}
+			
+			.blank label:after {
+			content:" *";
+			}
 
 /* responsive media queries */
 
