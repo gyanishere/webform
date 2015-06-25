@@ -46,20 +46,20 @@ $('.container__form').on('submit', function(event) {
 	// Removing invalid state when user enters text (not whitespace)
 	$('.blank input').blur(function() {
 		if ( $.trim( $(this).val() ) != '' ) {
-			$(this).parent().removeClass('blank');
+			$(this).closest('.grid__col').removeClass('blank');
 		}
 	});
 	
 	$('.blank select').blur(function() {
 		if ( $(this).val() ) {
-			$(this).parent().parent().removeClass('blank');
+			$(this).closest('.grid__col').removeClass('blank');
 		}
 	});
 	
 	// Adding invalid state when user revers to whitespace 
 	$('.blank input').keyup(function() {
 		if ( $.trim( $(this).val() ) == '' ) {
-			$(this).parent().addClass('blank');
+			$(this).closest('.grid__col').addClass('blank');
 		}
 	});
 
