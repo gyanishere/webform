@@ -15,14 +15,15 @@
 					</div>
 
 					<form class='container__form'>
+					{% csrf_token %}
 						<div class="grid">
 						    <div class="grid__col grid__col--1-of-2 width--mob" id='form--first--first'>
 						      <label class='container__form__label container__form__label--fn' for='first_name'>First Name</label>
-						      <input autofocus type='text' class='container__form__input container__form__input--fn' id='first_name' name='first_name'>
+						      <input required autofocus type='text' class='container__form__input container__form__input--fn' id='first_name' name='first_name'>
 						    </div>
 						    <div class="grid__col grid__col--1-of-2 width--mob" id='form--first--second'>
 						      <label class='container__form__label container__form__label--ln' for='last_name'>Last Name</label>
-						      <input type='text' class='container__form__input container__form__input--ln' id='last_name' name='last_name'>
+						      <input required type='text' class='container__form__input container__form__input--ln' id='last_name' name='last_name'>
 						    </div>
 					  	</div>
 
@@ -30,12 +31,12 @@
 							<div class='form--second--first width--expand width--mob compress--mob'>
 							    <div class="grid__col grid__col--3-of-4 width--mob">
 							      <label for='city' class='container__form__label container__form__label--fn form--city'>City</label>
-							      <input type='text' class='container__form__input container__form__input--fn form--city' id='city' name='city'>
+							      <input required type='text' class='container__form__input container__form__input--fn form--city' id='city' name='city'>
 							    </div>
 							    <div class="grid__col grid__col--1-of-4 width--mob compress--mob">
-							      <label for='state' class='container__form__label container__form__label--ln form--city form--city--left'>State</label>
+							      <label required for='state' class='container__form__label container__form__label--ln form--city form--city--left'>State</label>
 							      <div class='select--holder'>
-							      <select class='container__form__input container__form__input--ln form--state' id='state' name='state'>
+							      <select required class='container__form__input container__form__input--ln form--state' id='state' name='state'>
 							        <option disabled selected></option>
 									<option value="AL">AL</option>
 									<option value="AK">AK</option>
@@ -95,7 +96,7 @@
 							 <div class='form--second--second width--expand width--mob compress--mob'>
 							    <div class="grid__col grid__col--4-of-6 width--mob">
 							      <label for='zip' class='container__form__label container__form__label--ln smaller--orig'>Zip</label>
-							      <input type='text' class='container__form__input container__form__input--ln smaller--orig' id='zip' name='zip'>
+							      <input required type='text' class='container__form__input container__form__input--ln smaller--orig' id='zip' name='zip'>
 							    </div>
 							    <div class="grid__col grid__col--2-of-6 width--mob">
 							      <label for='timezone' class='container__form__label container__form__label--ln smaller--orig'>Time Zone</label>
@@ -108,13 +109,13 @@
 							<div class='form--second--first'>
 							    <div class="grid__col grid__col--4-of-4">
 							      <label for='mobile_number' class='container__form__label container__form__label--fn'>Mobile Number</label>
-							      <input type='text' class='container__form__input container__form__input--fn' id='mobile_number' name='mobile_number'>
+							      <input required type='text' class='container__form__input container__form__input--fn' id='mobile_number' name='mobile_number'>
 							    </div>
 							 </div>
 							 <div class='form--second--second'>
 							    <div class="grid__col grid__col--4-of-6">
 							      <label for='birthdate' class='container__form__label container__form__label--ln'>Birthdate</label>
-							      <input type='text' class='container__form__input container__form__input--ln' name='birthdate' id='birthdate'>
+							      <input required type='text' class='container__form__input container__form__input--ln' name='birthdate' id='birthdate'>
 							    </div>
 							</div>
 					  	</div>
@@ -166,7 +167,7 @@
 						<div class="grid button">
 							<div class='form--second--first'>
 							    <div class="grid__col grid__col--4-of-4">
-							    	<input type='submit' class='submit--button'>
+							    	<input type='submit' class='submit--button' formnovalidate>
 							    </div>
 							</div>
 					  	</div>
