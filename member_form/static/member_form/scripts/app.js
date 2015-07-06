@@ -79,9 +79,11 @@ $('.container__form').on('submit', function(event) {
 });
 
 function postFormValues(formValues) {
-	$.post('/member_form/formvalues/', formValues, function(data) {
-		console.log(data);
-	});
+	// if ($('.blank').length == 0) {
+		$.post('/member_form/formvalues/', formValues, function(data) {
+			console.log(data);
+		});
+	// }
 // console.log(formValues)
 // debug
 }

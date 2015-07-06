@@ -9,172 +9,181 @@
 	</head>
 	<body>
 		<div class="wrapper">
-				<div class="container">
-					<div class="container__header">
-						<img src='{% static 'member_form/media/delta_dental_logo_updated.png' %}' class='container__header__logo'>
+			<div class="container">
+				<div class="container__header">
+					<img src='{% static 'member_form/media/delta_dental_logo_updated.png' %}' class='container__header__logo'>
+				</div>
+
+				<form class='container__form'>
+				{% csrf_token %}
+					<div class="grid">
+						<div class="grid__col grid__col--1-of-2 width--mob" id='form--first--first'>	<label class='container__form__label container__form__label--fn' for='first_name'>First Name</label>
+							<input required autofocus type='text' class='container__form__input container__form__input--fn' id='first_name' name='first_name'>
+					    </div>
+					    <div class="grid__col grid__col--1-of-2 width--mob" id='form--first--second'>
+				    		<label class='container__form__label container__form__label--ln' for='last_name'>Last Name</label>
+				    		<input required type='text' class='container__form__input container__form__input--ln' id='last_name' name='last_name'>
+					    </div>
+				  	</div>
+
+					<div class="grid">
+						<div class='form--second--first width--expand width--mob compress--mob'>
+							<div class="grid__col grid__col--3-of-4 width--mob">
+								<label for='city' class='container__form__label container__form__label--fn form--city'>City</label>
+								<input required type='text' class='container__form__input container__form__input--fn form--city' id='city' name='city'>
+						    </div>
+						    <div class="grid__col grid__col--1-of-4 width--mob compress--mob">
+						    	<label required for='state' class='container__form__label container__form__label--ln form--city form--city--left'>State</label>
+						    	<div class='select--holder'>
+						    		<select required class='container__form__input container__form__input--ln form--state' id='state' name='state'>
+								        <option disabled selected></option>
+										<option value="AL">AL</option>
+										<option value="AK">AK</option>
+										<option value="AZ">AZ</option>
+										<option value="AR">AR</option>
+										<option value="CA">CA</option>
+										<option value="CO">CO</option>
+										<option value="CT">CT</option>
+										<option value="DE">DE</option>
+										<option value="DC">DC</option>
+										<option value="FL">FL</option>
+										<option value="GA">GA</option>
+										<option value="HI">HI</option>
+										<option value="ID">ID</option>
+										<option value="IL">IL</option>
+										<option value="IN">IN</option>
+										<option value="IA">IA</option>
+										<option value="KS">KS</option>
+										<option value="KY">KY</option>
+										<option value="LA">LA</option>
+										<option value="ME">ME</option>
+										<option value="MD">MD</option>
+										<option value="MA">MA</option>
+										<option value="MI">MI</option>
+										<option value="MN">MN</option>
+										<option value="MS">MS</option>
+										<option value="MO">MO</option>
+										<option value="MT">MT</option>
+										<option value="NE">NE</option>
+										<option value="NV">NV</option>
+										<option value="NH">NH</option>
+										<option value="NJ">NJ</option>
+										<option value="NM">NM</option>
+										<option value="NY">NY</option>
+										<option value="NC">NC</option>
+										<option value="ND">ND</option>
+										<option value="OH">OH</option>
+										<option value="OK">OK</option>
+										<option value="OR">OR</option>
+										<option value="PA">PA</option>
+										<option value="RI">RI</option>
+										<option value="SC">SC</option>
+										<option value="SD">SD</option>
+										<option value="TN">TN</option>
+										<option value="TX">TX</option>
+										<option value="UT">UT</option>
+										<option value="VT">VT</option>
+										<option value="VA">VA</option>
+										<option value="WA">WA</option>
+										<option value="WV">WV</option>
+										<option value="WI">WI</option>
+										<option value="WY">WY</option>
+						    		</select>
+						    	</div>
+						    </div>
+						</div>
+						<div class='form--second--second width--expand width--mob compress--mob'>
+						    <div class="grid__col grid__col--4-of-6 width--mob">
+						    	<label for='zip' class='container__form__label container__form__label--ln smaller--orig'>Zip</label>
+						    	<input required type='text' class='container__form__input container__form__input--ln smaller--orig' id='zip' name='zip'>
+						    </div>
+						    <div class="grid__col grid__col--2-of-6 width--mob">
+						    	<label for='timezone' class='container__form__label container__form__label--ln smaller--orig'>Time Zone</label>
+						    	<!-- <input required type='text' class='container__form__input container__form__input--ln smaller--orig' id='timezone' name='timezone'> -->
+						    	<div class='select--holder'>
+						    	<select required type='text' class='container__form__input container__form__input--ln smaller--orig' id='timezone' name='timezone'>
+						    		<option disabled selected></option>
+						    		<option value="CST">CST</option>
+				    		     	<option value="PST">PST</option>
+				    		     	<option value="EST">EST</option>
+				    		     	<option value="MST">MST</option>
+						    	</select>
+						    	</div>
+						    </div>
+						</div>
+				  	</div>
+
+					<div class="grid nested third">
+						<div class='form--second--first'>
+						    <div class="grid__col grid__col--4-of-4">
+						    	<label for='mobile_number' class='container__form__label container__form__label--fn'>Mobile Number</label>
+						    	<input required type='text' class='container__form__input container__form__input--fn' id='mobile_number' name='mobile_number'>
+						    </div>
+						</div>
+						<div class='form--second--second'>
+						    <div class="grid__col grid__col--4-of-6">
+						    	<label for='birthdate' class='container__form__label container__form__label--ln'>Birthdate</label>
+						    	<input required type='text' class='container__form__input container__form__input--ln' name='birthdate' id='birthdate'>
+						    </div>
+						</div>
+				  	</div>
+
+					<div class='grid--title'>
+						Age Ranges in Household
 					</div>
 
-					<form class='container__form'>
-					{% csrf_token %}
-						<div class="grid">
-						    <div class="grid__col grid__col--1-of-2 width--mob" id='form--first--first'>
-						      <label class='container__form__label container__form__label--fn' for='first_name'>First Name</label>
-						      <input required autofocus type='text' class='container__form__input container__form__input--fn' id='first_name' name='first_name'>
-						    </div>
-						    <div class="grid__col grid__col--1-of-2 width--mob" id='form--first--second'>
-						      <label class='container__form__label container__form__label--ln' for='last_name'>Last Name</label>
-						      <input required type='text' class='container__form__input container__form__input--ln' id='last_name' name='last_name'>
-						    </div>
-					  	</div>
+					<div class="grid grid--nomargin nested final">
+						<div class='form--second--first'>
 
-						<div class="grid">
-							<div class='form--second--first width--expand width--mob compress--mob'>
-							    <div class="grid__col grid__col--3-of-4 width--mob">
-							      <label for='city' class='container__form__label container__form__label--fn form--city'>City</label>
-							      <input required type='text' class='container__form__input container__form__input--fn form--city' id='city' name='city'>
-							    </div>
-							    <div class="grid__col grid__col--1-of-4 width--mob compress--mob">
-							      <label required for='state' class='container__form__label container__form__label--ln form--city form--city--left'>State</label>
-							      <div class='select--holder'>
-							      <select required class='container__form__input container__form__input--ln form--state' id='state' name='state'>
-							        <option disabled selected></option>
-									<option value="AL">AL</option>
-									<option value="AK">AK</option>
-									<option value="AZ">AZ</option>
-									<option value="AR">AR</option>
-									<option value="CA">CA</option>
-									<option value="CO">CO</option>
-									<option value="CT">CT</option>
-									<option value="DE">DE</option>
-									<option value="DC">DC</option>
-									<option value="FL">FL</option>
-									<option value="GA">GA</option>
-									<option value="HI">HI</option>
-									<option value="ID">ID</option>
-									<option value="IL">IL</option>
-									<option value="IN">IN</option>
-									<option value="IA">IA</option>
-									<option value="KS">KS</option>
-									<option value="KY">KY</option>
-									<option value="LA">LA</option>
-									<option value="ME">ME</option>
-									<option value="MD">MD</option>
-									<option value="MA">MA</option>
-									<option value="MI">MI</option>
-									<option value="MN">MN</option>
-									<option value="MS">MS</option>
-									<option value="MO">MO</option>
-									<option value="MT">MT</option>
-									<option value="NE">NE</option>
-									<option value="NV">NV</option>
-									<option value="NH">NH</option>
-									<option value="NJ">NJ</option>
-									<option value="NM">NM</option>
-									<option value="NY">NY</option>
-									<option value="NC">NC</option>
-									<option value="ND">ND</option>
-									<option value="OH">OH</option>
-									<option value="OK">OK</option>
-									<option value="OR">OR</option>
-									<option value="PA">PA</option>
-									<option value="RI">RI</option>
-									<option value="SC">SC</option>
-									<option value="SD">SD</option>
-									<option value="TN">TN</option>
-									<option value="TX">TX</option>
-									<option value="UT">UT</option>
-									<option value="VT">VT</option>
-									<option value="VA">VA</option>
-									<option value="WA">WA</option>
-									<option value="WV">WV</option>
-									<option value="WI">WI</option>
-									<option value="WY">WY</option>
-							      </select>
-							    </div>
-							    </div>
-							 </div>
-							 <div class='form--second--second width--expand width--mob compress--mob'>
-							    <div class="grid__col grid__col--4-of-6 width--mob">
-							      <label for='zip' class='container__form__label container__form__label--ln smaller--orig'>Zip</label>
-							      <input required type='text' class='container__form__input container__form__input--ln smaller--orig' id='zip' name='zip'>
-							    </div>
-							    <div class="grid__col grid__col--2-of-6 width--mob">
-							      <label for='timezone' class='container__form__label container__form__label--ln smaller--orig'>Time Zone</label>
-							      <input required type='text' class='container__form__input container__form__input--ln smaller--orig' id='timezone' name='timezone'>
-							    </div>
-							</div>
-					  	</div>
+						    <div class="grid__col grid__col--2-of-4">
 
-						<div class="grid nested third">
-							<div class='form--second--first'>
-							    <div class="grid__col grid__col--4-of-4">
-							      <label for='mobile_number' class='container__form__label container__form__label--fn'>Mobile Number</label>
-							      <input required type='text' class='container__form__input container__form__input--fn' id='mobile_number' name='mobile_number'>
-							    </div>
-							 </div>
-							 <div class='form--second--second'>
-							    <div class="grid__col grid__col--4-of-6">
-							      <label for='birthdate' class='container__form__label container__form__label--ln'>Birthdate</label>
-							      <input required type='text' class='container__form__input container__form__input--ln' name='birthdate' id='birthdate'>
-							    </div>
-							</div>
-					  	</div>
-						
-						<div class='grid--title'>
-							Age Ranges in Household
+								<div class='input--item'>
+									<input type="checkbox" name="infant_toddler" id="checkboxG4" class="css-checkbox" value='infant_toddler'>
+									<label for="checkboxG4" class="css-label radGroup1 clr">Infant/Toddler (0 -3)</label>
+								</div>
+
+								<div class='input--item'>
+									<input type="checkbox" name="child" id="checkboxG5" class="css-checkbox" value='child'>
+									<label for="checkboxG5" class="css-label radGroup1 clr">Child (4 - 12)</label>
+								</div>
+
+								<div class='input--item'>
+									<input type="checkbox" name="teen" id="checkboxG6" class="css-checkbox" value='teen'>
+									<label for="checkboxG6" class="css-label radGroup1 clr">Teen (13 - 19)</label>
+								</div>
+						    </div>
 						</div>
+						<div class='form--second--second'>
+						    <div class="grid__col grid__col--2-of-4">
 
-						<div class="grid grid--nomargin nested final">
-							<div class='form--second--first'>
+								<div class='input--item'>
+									<input type="checkbox" name="young_adult" id="checkboxG1" class="css-checkbox" value='young_adult'>
+									<label for="checkboxG1" class="css-label radGroup1 clr">Young Adult (20 - 35)</label>
+								</div>
+								<div class='input--item'>
+									<input type="checkbox" name="adult" id="checkboxG2" class="css-checkbox" value='adult'>
+									<label for="checkboxG2" class="css-label radGroup1 clr">Adult (35 - 65)</label>
+								</div>
+								<div class='input--item'>
+									<input type="checkbox" name="older_adult" id="checkboxG3" class="css-checkbox" value='older_adult'>
+									<label for="checkboxG3" class="css-label radGroup1 clr">Older Adult (65+)</label>
+								</div>
+						    </div>
+						</div>
+				  	</div>
 
-							    <div class="grid__col grid__col--2-of-4">
-
-									<div class='input--item'>
-										<input type="checkbox" name="infant_toddler" id="checkboxG4" class="css-checkbox" value='infant_toddler'>
-										<label for="checkboxG4" class="css-label radGroup1 clr">Infant/Toddler (0 -3)</label>
-									</div>
-
-									<div class='input--item'>
-										<input type="checkbox" name="child" id="checkboxG5" class="css-checkbox" value='child'>
-										<label for="checkboxG5" class="css-label radGroup1 clr">Child (4 - 12)</label>
-									</div>
-
-									<div class='input--item'>
-										<input type="checkbox" name="teen" id="checkboxG6" class="css-checkbox" value='teen'>
-										<label for="checkboxG6" class="css-label radGroup1 clr">Teen (13 - 19)</label>
-									</div>
-							    </div>
-							</div>
-							<div class='form--second--second'>
-							    <div class="grid__col grid__col--2-of-4">
-
-									<div class='input--item'>
-										<input type="checkbox" name="young_adult" id="checkboxG1" class="css-checkbox" value='young_adult'>
-										<label for="checkboxG1" class="css-label radGroup1 clr">Young Adult (20 - 35)</label>
-									</div>
-									<div class='input--item'>
-										<input type="checkbox" name="adult" id="checkboxG2" class="css-checkbox" value='adult'>
-										<label for="checkboxG2" class="css-label radGroup1 clr">Adult (35 - 65)</label>
-									</div>
-									<div class='input--item'>
-										<input type="checkbox" name="older_adult" id="checkboxG3" class="css-checkbox" value='older_adult'>
-										<label for="checkboxG3" class="css-label radGroup1 clr">Older Adult (65+)</label>
-									</div>
-							    </div>
-							</div>
-					  	</div>
-
-						<div class="grid button">
-							<div class='form--second--first'>
-							    <div class="grid__col grid__col--4-of-4">
-							    	<input type='submit' class='submit--button' formnovalidate>
-							    </div>
-							</div>
-					  	</div>
-
-		</div>
-		<script src="{% static 'member_form/scripts/checkbox_patch.js' %}" type="text/javascript"></script>			
-		<script src="{% static 'member_form/scripts/jquery-1.11.3.min.js' %}" type="text/javascript"></script>	
-		<script src="{% static 'member_form/scripts/app.js' %}" type="text/javascript"></script>					
+					<div class="grid button">
+						<div class='form--second--first'>
+						    <div class="grid__col grid__col--4-of-4">
+						    	<input type='submit' class='submit--button' formnovalidate>
+						    </div>
+						</div>
+				  	</div>
+			  	</form>
+		  	</div>
+	  	</div>
+		<script src="{% static 'member_form/scripts/checkbox_patch.js' %}" type="text/javascript"></script>
+		<script src="{% static 'member_form/scripts/jquery-1.11.3.min.js' %}" type="text/javascript"></script>
+		<script src="{% static 'member_form/scripts/app.js' %}" type="text/javascript"></script>
 	</body>
 </html>
