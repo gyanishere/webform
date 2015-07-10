@@ -208,6 +208,14 @@ input:invalid, input:-moz-ui-valid {
   color:gray;
 }
 
+/* view #2 -- confirmation page */
+.confirmation {
+  display:none;
+  padding:20px 15px 20px 15px;
+  margin-left:7%;
+  margin-right:7%;
+}
+
 
 /* CHECKBOXES -- custom */
 

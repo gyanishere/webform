@@ -1,5 +1,15 @@
 // (?) OVERVIEW: Validates, grabs data from inputs on submit, creates object, and submits via AJAX post
 
+// debug mode -- prepopulates the fields
+$('#first_name').val('Gyan');
+$('#last_name').val('Prayaga');
+$('#city').val('Los Angeles');
+$('#state').val('CA');
+$('#zip').val('91364');
+$('#timezone').val('PST');
+$('#mobile_number').val('(818) 585-6513');
+$('#birthdate').val('1998-03-15');
+
 // (1) pre-submit validation (happens automatically)
 $('.text-only').on('keydown', function(e) {
     var AllowRegex  = /^[A-Za-z\s\-]+$/;   
@@ -132,11 +142,37 @@ $('.container__form').on('submit', function(event) {
 
 });
 
+function startOver() {
+	$('.submit--button').css('pointer-events','auto');
+	$('.confirmation').html("");
+	$('input, select').val("");
+	$('.submit--button').val("Submit");
+	$('.container__form').show();
+	$('.confirmation').hide();	
+}
+
+function confirm_view(formValues) {
+	$('.container__form').hide();
+	$('.confirmation').show();
+
+	$('.confirmation').html("<h1>Member added!</h1><p style='line-height:1.5'>Your submission was successful. A member named <b>" + formValues['first_name'] + " " + formValues['last_name'] + "</b> has been added to our records.<br><br><button onclick='startOver()' class='submit--button'>Add another member</button><h3 style='margin-top:50px;padding-top:30px;border-top:1px solid lightgray'>Details</h3>");
+
+	for (var key in formValues) {
+		if (key != 'csrfmiddlewaretoken') {
+     		$('.confirmation').append('<span style=font-family:Monaco;font-size:.85em;line-height:.6;display:block>' + key + ': <b>' + formValues[key] + '</b></span><br>');
+     	}
+   	}
+
+}
+
 // (3) posting with ajax
 function postFormValues(formValues) {
 	console.log(formValues);
 
 	$('.submit--button').val('Submitting...');
+	$('.submit--button').css('pointer-events','none');
+
+	confirm_view(formValues);
 	//$.post('/member_form/formvalues/', formValues, function(data) {
 		//console.log(data);
 	//});
