@@ -2,7 +2,6 @@
 
 // (1) pre-submit validation (happens automatically)
 $('.text-only').on('keydown', function(e) {
-    // update regex to include hypens
     var AllowRegex  = /^[A-Za-z\s\-]+$/;   
     var string = String.fromCharCode(e.keyCode);
     if (AllowRegex.test(string) || e.keyCode == 16 || e.keyCode == 8 || e.keyCode == 224 || e.keyCode == 18 || e.keyCode == 17 || e.keyCode == 16 || e.keyCode == 20 || e.keyCode == 9 || e.keyCode == 39 || e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 40 || e.keyCode == 91) return true;
@@ -14,15 +13,18 @@ $('.text-only').on('keydown', function(e) {
 });
 
 $('.name-only').on('keydown', function(e) {
-    // update regex to include hypens
-    var AllowRegex  = /^[a-z\-\s]+$/i;   
-    var string = String.fromCharCode(e.keyCode);
-    if (AllowRegex.test(string) || e.keyCode == 16 || e.keyCode == 8 || e.keyCode == 224 || e.keyCode == 18 || e.keyCode == 17 || e.keyCode == 16 || e.keyCode == 20 || e.keyCode == 9 || e.keyCode == 39 || e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 40 || e.keyCode == 189 || e.keyCode == 91) return true;
- 
-	$(this).fadeTo(100, 0.6, function() { 
-		$(this).fadeTo(100, 1); 
-	});  
-    return false;
+ 		var string = String.fromCharCode(e.keyCode);
+  		function isAlphaOrParen(str) {
+		  return /^[a-zA-Z()]+$/.test(str);
+		}
+ 		if (isAlphaOrParen(string) || e.keyCode == 16 || e.keyCode == 8 || e.keyCode == 224 || e.keyCode == 18 || e.keyCode == 17 || e.keyCode == 16 || e.keyCode == 20 || e.keyCode == 9 || e.keyCode == 39 || e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 40 || e.keyCode == 91 || e.keyCode == 173 || e.keyCode == 32) {
+ 			return true;
+ 		}
+
+	 	$(this).fadeTo(100, 0.6, function() { 
+			$(this).fadeTo(100, 1); 
+		});  
+ 		return false;
 });
 
 // masked input & auto-validation
@@ -45,8 +47,6 @@ $('#birthdate').on('keyup', function(event) {
 		$(this).css('color','black');
 	}
 });
-
-
 
 // (2) submit method
 $('.container__form').on('submit', function(event) {
