@@ -75,11 +75,11 @@ input:invalid, input:-moz-ui-valid, select:invalid, select:-moz-ui-valid {
 
 
 .select--holder::after {
-	content:"\25BE";
-	position:relative;
-	bottom:30px;
-	left:70%;
-	pointer-events:none;
+  content:"\25BE";
+  position:absolute;
+  top:32px;
+  right:10px;
+  pointer-events:none;
 }
 
 .container__form__input:focus {
