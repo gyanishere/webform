@@ -79,9 +79,9 @@ input:invalid, input:-moz-ui-valid, select:invalid, select:-moz-ui-valid {
 
 .select--holder::after {
   content:"\25BE";
-  position:relative;
-  bottom:32px;
-  left:70%;
+  position:absolute;
+  top:10px;
+  right:8px;
   pointer-events:none;
 }
 
@@ -90,11 +90,11 @@ input:invalid, input:-moz-ui-valid, select:invalid, select:-moz-ui-valid {
 }
 
 .container__form__label {
-	display:block;
-	width:100%;
-	overflow: hidden;
-  	text-overflow: ellipsis;
-  	white-space: nowrap;
+  display:block;
+  width:100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .grid__col--1-of-2#form--first--first label, .grid__col--1-of-2#form--first--first input {
@@ -336,8 +336,7 @@ input[type=checkbox].css-checkbox {
       }
 
       .form--state {
-      	  width: 80% !important;
-  		margin-left: 10px !important;
+        margin-left: 10px !important;
       }
 
       .form--city {

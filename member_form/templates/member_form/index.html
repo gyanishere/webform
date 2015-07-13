@@ -106,15 +106,17 @@
 							      <label for='zip' class='container__form__label container__form__label--ln smaller--orig'>Zip</label>
 							      <input required type='text' class='container__form__input container__form__input--ln smaller--orig num-only' id='zip' name='zip' type='number'>
 							    </div>
-							    <div class="grid__col grid__col--2-of-6 width--mob">
-							      <label for='timezone' class='container__form__label container__form__label--ln smaller--orig'>Time Zone</label>
-								  <select required class='container__form__input container__form__input--ln smaller--orig' id='timezone' name='timezone'>
-							        <option disabled selected></option>
-									<option value="CST">Central Standard Time</option>
-									<option value="PST">Pacific Standard Time</option>
-									<option value="EST">Eastern Time</option>
-									<option value="MST">Mountain Time</option>
-								</select>
+								<div class="grid__col grid__col--2-of-6 width--mob">
+									<label for='timezone' class='container__form__label container__form__label--ln smaller--orig'>Time Zone</label>
+									<div class='select--holder'>
+										<select required class='container__form__input container__form__input--ln smaller--orig' id='timezone' name='timezone'>
+									        <option disabled selected></option>
+											<option value="CST">CST</option>
+											<option value="PST">PST</option>
+											<option value="EST">EST</option>
+											<option value="MST">MST</option>
+										</select>
+									</div>
 							    </div>
 							</div>
 					  	</div>
