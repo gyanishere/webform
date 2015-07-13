@@ -64,6 +64,13 @@ body {
 	display: block;
 	width: 100%;
 	border-radius:0;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+}
+
+/* turning off native firefox validation */
+input:invalid, input:-moz-ui-valid, select:invalid, select:-moz-ui-valid {
+     box-shadow: none;
 }
 
 .select--holder {
@@ -71,11 +78,11 @@ body {
 }
 
 .select--holder::after {
-	content:"\25BE";
-  position: absolute;
-  top: 10px;
-  right: 10px;
-	pointer-events:none;
+  content:"\25BE";
+  position:relative;
+  bottom:32px;
+  left:70%;
+  pointer-events:none;
 }
 
 .container__form__input:focus {
@@ -179,7 +186,7 @@ body {
 	border-radius:3px;
 	background-color:#30B236;
 	color:white;
-	padding:8px 20px 8px 20px;	
+	padding:8px 20px 8px 20px;
 	font-size:1.1em;
 	-webkit-transition:background .1s;
 	cursor:pointer;
@@ -200,6 +207,25 @@ body {
   margin-top: 25px;
 }
 
+#birthdate, #mobile_number {
+  color:gray;
+}
+
+/* view #2 -- confirmation page */
+.confirmation {
+  display:none;
+  padding:20px 15px 20px 15px;
+  margin-left:7%;
+  margin-right:7%;
+}
+
+#warning {
+display:none;
+color:red;
+margin-bottom:-15px;
+padding:20px;
+}
+
 
 /* CHECKBOXES -- custom */
 
@@ -209,7 +235,7 @@ input[type=checkbox].css-checkbox {
 
 						input[type=checkbox].css-checkbox + label.css-label, input[type=checkbox].css-checkbox + label.css-label.clr {
 							padding-left:23px;
-							height:15px; 
+							height:15px;
 							display:inline-block;
 							line-height:15px;
 							background-repeat:no-repeat;
@@ -232,19 +258,32 @@ input[type=checkbox].css-checkbox {
 				-ms-user-select: none;
 				user-select: none;
 			}
-			
+
 			.blank label {
 			color:red;
 			}
-			
+
 			.blank input, .blank input:focus, .blank select, .blank select:focus {
 			border-color:red;
 			}
-			
+
 			.blank label:after {
 			content:" *";
 			}
 
+  /* firefox-specific styling */
+
+  @-moz-document url-prefix() {
+      .grid > .grid__col--1-of-2#form--first--first {
+        width:49%;
+      }
+
+      select {
+        height:40.5px;
+      }
+  }
+
+  /* IE styles are done using separate stylesheet - 'ie.css' */
 /* responsive media queries */
 
     @media (max-width: 800px) {
@@ -254,9 +293,9 @@ input[type=checkbox].css-checkbox {
     	}
 
       .width--tab {
-        width: 100%; 
+        width: 100%;
         display:block;
-      } 
+      }
 
       .wrapper {
       	max-width:800px;
@@ -269,13 +308,13 @@ input[type=checkbox].css-checkbox {
     @media (max-width: 550px) {
 
       .width--mob, .width--tab {
-        width: 100% !important; 
+        width: 100% !important;
         display:block;
         margin-left:0;
         margin-right:0;
         position:static;
         margin-bottom:20px;
-      } 
+      }
 
       .width--mob * {
         margin-left:0 !important;
