@@ -76,9 +76,9 @@ input:invalid, input:-moz-ui-valid, select:invalid, select:-moz-ui-valid {
 
 .select--holder::after {
   content:"\25BE";
-  position:absolute;
-  top:32px;
-  right:10px;
+  position:relative;
+  bottom:32px;
+  left:70%;
   pointer-events:none;
 }
 
