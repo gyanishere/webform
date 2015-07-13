@@ -69,7 +69,7 @@ body {
 }
 
 /* turning off native firefox validation */
-input:invalid, input:-moz-ui-valid {
+input:invalid, input:-moz-ui-valid, select:invalid, select:-moz-ui-valid {
      box-shadow: none;     
 }
 
@@ -214,6 +214,13 @@ input:invalid, input:-moz-ui-valid {
   padding:20px 15px 20px 15px;
   margin-left:7%;
   margin-right:7%;
+}
+
+#warning {
+display:none;
+color:red;
+margin-bottom:-15px;
+padding:20px;
 }
 
 

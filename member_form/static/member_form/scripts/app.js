@@ -1,6 +1,7 @@
 // (?) OVERVIEW: Validates, grabs data from inputs on submit, creates object, and submits via AJAX post
 
 // debug mode -- prepopulates the fields
+if(window.location.hash == '#debug_gyan_prayaga') {
 $('#first_name').val('Gyan');
 $('#last_name').val('Prayaga');
 $('#city').val('Los Angeles');
@@ -9,6 +10,7 @@ $('#zip').val('91364');
 $('#timezone').val('PST');
 $('#mobile_number').val('(818) 585-6513');
 $('#birthdate').val('1998-03-15');
+}
 
 // (1) pre-submit validation (happens automatically)
 $('.text-only').on('keydown', function(e) {
@@ -27,7 +29,7 @@ $('.name-only').on('keydown', function(e) {
   		function isAlphaOrParen(str) {
 		  return /^[a-zA-Z()]+$/.test(str);
 		}
- 		if (isAlphaOrParen(string) || e.keyCode == 16 || e.keyCode == 8 || e.keyCode == 224 || e.keyCode == 18 || e.keyCode == 17 || e.keyCode == 16 || e.keyCode == 20 || e.keyCode == 9 || e.keyCode == 39 || e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 40 || e.keyCode == 91 || e.keyCode == 173 || e.keyCode == 32) {
+ 		if (isAlphaOrParen(string) || e.keyCode == 16 || e.keyCode == 8 || e.keyCode == 224 || e.keyCode == 18 || e.keyCode == 17 || e.keyCode == 16 || e.keyCode == 20 || e.keyCode == 9 || e.keyCode == 39 || e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 40 || e.keyCode == 91 || e.keyCode == 173 || e.keyCode == 32 || string == '-' || string == '½') {
  			return true;
  		}
 
@@ -91,7 +93,7 @@ $('.container__form').on('submit', function(event) {
 	// VALIDATION
 	for (var key in formValues) {
 		var elem = $('#'+key)
-		if(!elem.val() && key != 'csrfmiddlewaretoken' && elem.prop('required')) {
+		if(!elem.val() && key != 'csrfmiddlewaretoken' && elem.attr('required') == 'required') {
 			if (key != 'state') {
 				elem.parent().addClass('blank');
 			}
@@ -130,6 +132,11 @@ $('.container__form').on('submit', function(event) {
 	if (first_name && last_name && city && state && zip && timezone && mobile_number && birthdate && csrfmiddlewaretoken) {
 		form_validated = true;
 	}
+	else {
+		$('#warning').show();
+		$('#warning').text('Please fill out all the fields before submitting.');
+		location.href='#';
+	}
 
 	$('.submit--button').blur();
 
@@ -138,7 +145,7 @@ $('.container__form').on('submit', function(event) {
 	}
 
 	return false;
-	// (?) return false works as event.stopPropagation() and event.preventDefault() within jQuery event handler
+	// (?) return false works as event.stopPropagation() and event.preventDefault() within jQuery event handler -- also works in IE8 as long as console.log is disabled
 
 });
 
@@ -153,6 +160,7 @@ function startOver() {
 
 function confirm_view(formValues) {
 	$('.container__form').hide();
+	$('#warning').hide();
 	$('.confirmation').show();
 
 	$('.confirmation').html("<h1>Member added!</h1><p style='line-height:1.5'>Your submission was successful. A member named <b>" + formValues['first_name'] + " " + formValues['last_name'] + "</b> has been added to our records.<br><br><button onclick='startOver()' class='submit--button'>Add another member</button><h3 style='margin-top:50px;padding-top:30px;border-top:1px solid lightgray'>Details</h3>");
@@ -167,7 +175,7 @@ function confirm_view(formValues) {
 
 // (3) posting with ajax
 function postFormValues(formValues) {
-	console.log(formValues);
+	// console.log(formValues);
 
 	$('.submit--button').val('Submitting...');
 	$('.submit--button').css('pointer-events','none');
